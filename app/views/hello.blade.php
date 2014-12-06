@@ -4,6 +4,10 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Clique</title>
+
+	<link rel="stylesheet" type="text/css" href="css/samplesass.css">
+
+	<!--
 	<style>
 		@import url(//fonts.googleapis.com/css?family=Lato:700);
 
@@ -33,6 +37,8 @@
 			margin: 16px 0 0 0;
 		}
 	</style>
+	-->
+
 </head>
 <body>
 	<div class="welcome">

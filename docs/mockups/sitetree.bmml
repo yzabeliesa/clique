@@ -1,0 +1,9 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1423" measuredH="605" mockupW="1180" mockupH="550">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::SiteMap" x="243" y="55" w="-1" h="-1" measuredW="1180" measuredH="550" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>login%0A-%20signup%0A-%20home%0A--%20projects%0A---%20meetings%0A----%20attendance%0A--%20logistics%0A---%20materials%0A---%20venues%0A--%20finance%0A---%20statements%0A----%20entries%0A--%20marketing%0A---%20companies%0A--%20externals%0A---%20alumni%0A--%20internals%0A---members%0A----classes%0A----evals%0A--%20user</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
