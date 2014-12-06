@@ -2,6 +2,12 @@
 
 Clique is an online org-tracking web tool, currently built on Laravel. 
 
+## Team Notice: Branches
+
+- `v1.0` will be our main development branch. Please sync to this branch regularly.
+- `master` will kept updated with the latest stable release.
+- `backup` will be updated daily from `v1.0`.
+
 ## Documentation
 
 All project documentation is under the `/docs` folder, listed below:
@@ -89,7 +95,7 @@ Follow these steps to get a working local copy of Clique on your local (Windows 
 
 If yor're still confused / can't get Laravel to work / would like to point out a fundamental mistake (hey I'm just learning this too), send a message. 
 
-## Team Questions
+## Random Questions
 
 #### Jeric what have you done - dafuq is Clique? eww
 
