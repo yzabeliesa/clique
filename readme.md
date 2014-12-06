@@ -5,7 +5,7 @@ Clique is an online org-tracking web tool, currently built on Laravel.
 ## Team Notice: Branches
 
 - `v1.0` will be our main development branch. Please sync to this branch regularly.
-- `master` will kept updated with the latest stable release.
+- `master` will be kept updated with the latest stable release.
 - `backup` will be updated daily from `v1.0`.
 
 ## Documentation
