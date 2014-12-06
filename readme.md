@@ -104,3 +104,6 @@ I just remembered that cliques have vertices all connected to each other (much l
 Sory uli sa Sat work guys unavoidable @_@
 So san overnight sa Sat? Haha
 
+Collaboration ON!
+
+Food please
