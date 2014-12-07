@@ -122,6 +122,8 @@ When you wish to compile, just run `grunt` in the clique\ root using git shell. 
 
 If you wish to tinker with this setup, just change the `Gruntfile.js` in the root.
 
+For clarifications on this setup, you can look at the guide that I followed [here](http://gabriela.io/blog/2014/08/10/laravel-with-grunt-bower-foundation-and-sass/).
+
 ## Random Questions
 
 #### Jeric what have you done - dafuq is Clique? eww
