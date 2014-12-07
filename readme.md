@@ -124,6 +124,10 @@ If you wish to tinker with this setup, just change the `Gruntfile.js` in the roo
 
 For clarifications on this setup, you can look at the guide that I followed [here](http://gabriela.io/blog/2014/08/10/laravel-with-grunt-bower-foundation-and-sass/).
 
+`Jeric you asshole - you did it again, JS and SASS are just interpreted , why make us compile it`
+
+Ahhhh because this step does a little more than that - this also minifies both the generated CSS and JS. So I used it for scalability reasons. If you find it too much a hassle, I can always revert back to a compile-less branch; just tell the word.
+
 ## Random Questions
 
 #### Jeric what have you done - dafuq is Clique? eww
