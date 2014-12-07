@@ -46,8 +46,4 @@ $app = require_once __DIR__.'/../bootstrap/start.php';
 |
 */
 
-SassCompiler::run("scss/", "css/");
-// some people said this does not work in their installation, so if you have trouble, try these paths:
-// SassCompiler::run("public/scss/", "public/css/");
-
 $app->run();

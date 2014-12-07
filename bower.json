@@ -1,0 +1,19 @@
+{
+  "name": "clique",
+  "version": "4.2.11",
+  "homepage": "https://github.com/lorcanfurey/clique",
+  "authors": [
+    "lorcanfurey <jericpaul.deleon@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation": "~5.4.7"
+  }
+}
