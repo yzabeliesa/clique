@@ -4,9 +4,10 @@ Clique is an online org-tracking web tool, currently built on Laravel.
 
 ## Team Notice: Branches
 
-- `v1.0` will be our main development branch. Please sync to this branch regularly.
+- `v1.0` will be our main development branch. Please use this for commits. Sync to this branch regularly.
 - `master` will be kept updated with the latest stable release.
 - `backup` will be updated daily from `v1.0`.
+- `v2.0` can be used for testing (or you can even create your own branch)
 
 ## Documentation
 
@@ -54,12 +55,12 @@ my most recent copy of the final paper
 Follow these steps to get a working local copy of Clique on your local (Windows with XAMPP) machine, along with some GitHub basics:
 
 - Install [GitHub] (https://github-windows.s3.amazonaws.com/GitHubSetup.exe) 
-  - afterwards please give me your GitHub usernames so I can set you as collaborators
+  - afterwards please give me your GitHub usernames so I can set you as collaborators (highly recommended, since we are planning to develop concurrently in branch v1.0).
 - Install [Composer] (https://getcomposer.org/Composer-Setup.exe)
   - during installation, point the PHP executable to `C:\xampp\php` (or wherever it is)
   - while you're at it, make sure to set PHP in your PATH environment variable too
 - Open GitHub in your machine, then clone this repo into your `C:\xampp\htdocs` folder (or whatever web root you have set)
-  - if I am still not available by this time, then fork (make your own branch) this repo instead and clone your fork into your machine. During collaboration, you'll have to send a pull request for every commit that you would like to make (if the terms are still vague, you can read this [guide](https://help.github.com/categories/collaborating/) for an overview).
+  - if I am still not available by this time, then fork (make your own branch) this repo instead and clone your fork into your machine. Then to collaborate, you'll have to send a pull request for every commit that you would like to make (if the terms are still vague, you can read this [guide](https://help.github.com/categories/collaborating/) for an overview).
 - Set Up Clique
   - set up a proxy url
     - open `C:\Windows\System32\drivers\etc\hosts`, then add this line: 
@@ -90,20 +91,42 @@ Follow these steps to get a working local copy of Clique on your local (Windows 
     - restart Apache server, then go to http://www.clique.dev. You should now see the Laravel Welcome Screen.
   - double-check config files in `clique\app\config` for any unique settings that you may have for your machine, such as database connection settings (just add a .gitignore file for it afterwards)
 - Whenever you make changes to the application:
-  - if you are already a collaborator, just sync your changes, then commit
+  - if you are already a collaborator, just sync your changes, then commit (make sure that you are submitting commits to the v1.0 branch!)
   - if not, then sync your changes to your fork and create a pull request for that fork (you can look at this [guide](https://help.github.com/categories/collaborating/) for details).
 
 If yor're still confused / can't get Laravel to work / would like to point out a fundamental mistake (hey I'm just learning this too), send a message. 
+
+## Front-End Setup
+
+If you will be working with front-end, I have added a couple more dependencies for an organized front-end setup (basically a SASS + JS compiler). If you don't plan to tinker with SASS / CSS / JS / Bootstrap, you can just ignore these steps. Follow the ff. instructions:
+
+- Update Composer by running this in the clique\ root: `composer update`.
+- Install [Ruby](http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-1.9.3-p551.exe?direct).
+  - Install SASS by running this in the clique\ root using git shell: `gem install sass`.
+  - Install Compass by running this in the clique\ root using git shell: `gem install compass`.
+- Install [Node.js](http://nodejs.org/dist/v0.10.33/node-v0.10.33-x86.msi).
+  - Update Node.js by running this in the clique\ root using git shell: `npm update`.  
+  - Install Bower by running this in the clique\ root using git shell: `npm install -g bower`.
+    - Update Bower by running this in the clique\ root using git shell: `bower update`.   
+  - Install Grunt by running this in the clique\ root using git shell: `npm install -g grunt-cli`.
+  
+SASS / Compass are required for SASS compilation, while Grunt will be managing our SASS/CSS/JS assets.
+
+During frontend development, respective elements should be put in the following:
+- SASS: `clique\public\assets\stylesheets`
+- JS: `clique\public\assets\javascripts`
+
+When you wish to compile, just run `grunt` in the clique\ root using git shell. All respective static CSS and min.js should then be generated in:
+- SASS: `clique\public\css`
+- JS: `clique\public\js`
+
+If you wish to tinker with this setup, just change the `Gruntfile.js` in the root.
 
 ## Random Questions
 
 #### Jeric what have you done - dafuq is Clique? eww
 
 I just remembered that cliques have vertices all connected to each other (much like how you want everyone in the org to be connected), plus Clique and CURSOR jives together (get it? HAHA) so I thought why not. 
-
-#### Assuming there is a final paper submission and an implementation submission, what is the team's direction? Should there be a difference between the two (the final paper will have complete user stories / cases [relative to the last paper we submitted], but only a select few will be implemented)...or should the two be parallel (paper == implementation)?
-
-*Please answer me haha*
 
 ## Freedom Board
 
