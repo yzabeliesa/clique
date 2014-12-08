@@ -124,9 +124,9 @@ If you wish to tinker with this setup, just change the `Gruntfile.js` in the roo
 
 For clarifications on this setup, you can look at the guide that I followed [here](http://gabriela.io/blog/2014/08/10/laravel-with-grunt-bower-foundation-and-sass/).
 
-`Jeric you asshole - you did it again, JS and SASS are just interpreted , why make us compile it`
+`Jeric you asshole - you did it again, JS and SASS are just interpreted, why make us use Grunt`
 
-Ahhhh because this step does a little more than that - this also minifies both the generated CSS and JS. So I used it for scalability reasons. If you find it too much a hassle, I can always revert back to a compile-less branch; just tell the word.
+Grunt is an extendable automation tool, so I chose this out of scalability reasons (for example, all CSS / JS output from `grunt` will already be minified from this setup). If you find it too much a hassle, just tell me so I can remove all dependencies, or just move the assets manually (I'm not supposed to be front-end anyway haha).
 
 ## Random Questions
 
