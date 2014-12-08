@@ -11,6 +11,7 @@
 |
 */
 
+/*
 Route::get('/', function()
 {
 	$data = array(
@@ -22,6 +23,38 @@ Route::get('/', function()
 		),
 		'test'			=>	true
 	);
-	return View::make('hello', $data);
+	return View::make('main', $data);
 });
 
+Route::get('login', function()
+{
+	$data = array(
+		'greeting' 		=> 	'Hello',
+		'person' 		=>	'User',
+		'statements'	=>	array(
+			'an online org-tracking tool', 
+			'a test site for CS 165'
+		),
+		'test'			=>	true
+	);
+	return View::make('main', $data);
+});
+
+Route::get('register', function()
+{
+	$data = array(
+		'greeting' 		=> 	'Hello',
+		'person' 		=>	'User',
+		'statements'	=>	array(
+			'an online org-tracking tool', 
+			'a test site for CS 165'
+		),
+		'test'			=>	true
+	);
+	return View::make('main', $data);
+});
+*/
+
+Route::get('/', 'HomeController@showWelcome');
+
+Route::controller('users', 'UsersController');

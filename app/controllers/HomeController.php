@@ -15,9 +15,14 @@ class HomeController extends BaseController {
 	|
 	*/
 
+    protected $layout = "main";
+
 	public function showWelcome()
 	{
-		return View::make('hello');
+    	$this->layout->content = View::make('elements.homebanner');
 	}
 
 }
+
+
+	

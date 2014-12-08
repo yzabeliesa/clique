@@ -1,5 +1,3 @@
-@import 'bootstrap-sprockets';
-@import 'bootstrap-mincer';
-@import 'bootstrap-compass';
-@import 'bootstrap';
-@import 'bootswatch';
+//I modified the original bootstrap being imported here to use a Bootswatch Theme("Superhero"), you may start again from a fresh install should you wish
+
+@import '../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap';

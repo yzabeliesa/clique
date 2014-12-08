@@ -36,7 +36,8 @@ module.exports = function (grunt) {
                     '<%= paths.assets.vendor %>jquery.cookie/jquery.cookie.js',
                     '<%= paths.assets.vendor %>jquery.placeholder/jquery.placeholder.js',
                     '<%= paths.assets.vendor %>fastclick/lib/fastclick.js',
-                    '<%= paths.assets.vendor %>foundation/js/foundation.js'
+                    '<%= paths.assets.vendor %>foundation/js/foundation.js',
+                    '<%= paths.assets.vendor %>bootstrap-sass-official/assets/javascripts/bootstrap.js',
                 ],
                 dest: '<%= paths.js %>expanded/scripts_footer.js',
             }

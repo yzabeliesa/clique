@@ -6,7 +6,8 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-        "phpunit/phpunit": "4.*"
+        "phpunit/phpunit": "4.*",
+        "fzaninotto/Faker": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
