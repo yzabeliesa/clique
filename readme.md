@@ -102,6 +102,7 @@ If you will be working with front-end, I have added a couple more dependencies f
 
 - Update Composer by running this in the clique\ root: `composer update`.
 - Install [Ruby](http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-1.9.3-p551.exe?direct).
+  - Open Git shell and got to the clique\ root. Make sure that you are syncing to the `v1.0`. If you are on another branch, you can display all available branches through `git branch`, then sync to a specific branch through `git checkout [branchname]`.   
   - Install SASS by running this in the clique\ root using git shell: `gem install sass`.
   - Install Compass by running this in the clique\ root using git shell: `gem install compass`.
 - Install [Node.js](http://nodejs.org/dist/v0.10.33/node-v0.10.33-x86.msi).
@@ -126,7 +127,12 @@ For clarifications on this setup, you can look at the guide that I followed [her
 
 `Jeric you asshole - you did it again, JS and SASS are just interpreted, why make us use Grunt`
 
-Grunt is an extendable automation tool, so I chose this out of scalability reasons (for example, all CSS / JS output from `grunt` will already be minified from this setup). If you find it too much a hassle, just tell me so I can remove all dependencies, or just move the assets manually (I'm not supposed to be front-end anyway haha).
+Grunt is a configurable automation tool, so I chose this out of scalability reasons. For example, executing one `grunt` command in this setup will:
+- put modernizr.js and all custom js in scripts_header.js
+- put all jquery.js, foundation.js and fastclick.js (vendor js; don't know exactly how we can use these but they are recommended) in scripts_footer.js
+- minify all CSS / JS and put them in the right public folder
+
+If you find it too much of a hassle, just tell me so I can remove all dependencies, or you may just move the assets manually (I'm not supposed to be front-end anyway haha).
 
 ## Random Questions
 
