@@ -1,3 +1,6 @@
+@extends('main')
+
+@section('content')
 <div align="center">
 	<br/><br/> 
 	<a href="http://www.clique.dev" title="Clique">
@@ -15,3 +18,4 @@
 	<h1>Welcome to Clique.</h1>
 	</br>
 </div>
+@stop

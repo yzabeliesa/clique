@@ -52,7 +52,22 @@
 			            <p>{{ Session::get('message') }}</p>
 			    </div>
 		    @endif
-	        {{ $content }}
+
+			@if(!Auth::check())
+	       	 	@yield('content')
+            @else
+				<div id="sidebar" class="col-md-2">
+					@include('sidebar')
+				</div>
+
+				<!-- main content -->
+				<div id="content" class="col-md-10">
+					@yield('content')
+				</div>
+            @endif
+
+		    
+
 	        
 	    </div>
 	</div>

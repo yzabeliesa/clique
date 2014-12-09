@@ -2,7 +2,6 @@
  
 class UsersController extends BaseController {
 
-    protected $layout = "main";
 
 	public function __construct() {
 	    $this->beforeFilter('csrf', array('on'=>'post'));
@@ -10,7 +9,7 @@ class UsersController extends BaseController {
 	}
 
     public function getRegister() {
-    	$this->layout->content = View::make('users.register');
+    	return View::make('users.register');
 	}
 
 	public function postCreate() {
@@ -34,14 +33,18 @@ class UsersController extends BaseController {
 
 		    $user->save();
  
-		    return Redirect::to('users/login')->with('message', 'Thanks for registering!');
+		    return Redirect::to('users/login')
+		    	->with('message', 'Thanks for registering!');
 		} else {
-		    return Redirect::to('users/register')->with('message', 'The following errors occurred')->withErrors($validator)->withInput();
+		    return Redirect::to('users/register')
+		    	->with('message', 'The following errors occurred')
+		    	->withErrors($validator)
+		    	->withInput();
 		}
 	}	
 
 	public function getLogin() {
-	    $this->layout->content = View::make('users.login');
+	    return View::make('users.login');
 	}
 
 	public function postSignin() {
@@ -56,7 +59,7 @@ class UsersController extends BaseController {
 	}
 
 	public function getDashboard() {
-    	$this->layout->content = View::make('users.dashboard');
+    	return View::make('users.dashboard');
 	}
 
 	public function getLogout() {
