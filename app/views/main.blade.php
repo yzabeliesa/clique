@@ -18,8 +18,14 @@
 		  </div>
 		  <div class="navbar-collapse collapse navbar-inverse-collapse">
 		    <ul class="nav navbar-nav navbar-right">
-		      <li><a href="{{ URL::to('users/login') }}">Log In</a></li>
-		      <li><a href="{{ URL::to('users/register') }}">Register</a></li>
+
+
+                @if(!Auth::check())
+                    <li>{{ HTML::link('users/register', 'Register') }}</li>   
+                    <li>{{ HTML::link('users/login', 'Login') }}</li>   
+                @else
+                    <li>{{ HTML::link('users/logout', 'Logout') }}</li>
+                @endif
 
 
 		      <!-- For future use
@@ -39,11 +45,13 @@
 		</div>
 		      
 		<div class="container">
-
-	        @if(Session::has('message'))
-	            <p class="alert">{{ Session::get('message') }}</p>
-	        @endif
-	 
+			@if(Session::has('message'))
+				<div class="alert alert-dismissable alert-info">
+					<button type="button" class="close" data-dismiss="alert">×</button>
+		  			<h4>Warning!</h4>
+			            <p>{{ Session::get('message') }}</p>
+			    </div>
+		    @endif
 	        {{ $content }}
 	        
 	    </div>

@@ -33,6 +33,7 @@ CREATE TABLE clique.users (
 	password 			CHAR(64) 	NOT NULL, -- SHA-256 
 	created_at			TIMESTAMP	NULL,
 	updated_at			TIMESTAMP	NULL,
+	remember_token		VARCHAR(100) NULL,
 
 	PRIMARY KEY(id),
 	UNIQUE(student_no),
@@ -194,7 +195,7 @@ CREATE TABLE clique.company_fax_nos (
 		ON UPDATE CASCADE
 );
 
-CREATE TABLE clique.contact_persons (
+CREATE TABLE clique.company_contact_persons (
 	id 					INT 		NOT NULL AUTO_INCREMENT,
 	company_id 			INT 		NOT NULL, 
 	first_name 			VARCHAR(30) NOT NULL, 
@@ -218,7 +219,7 @@ CREATE TABLE clique.contact_persons (
 
 -- ALUMNI RELATIONS DATABASE
 
-CREATE TABLE clique.alumnus ( 
+CREATE TABLE clique.alumni ( 
 	id 					INT 		NOT NULL AUTO_INCREMENT,
 	student_no 			CHAR(10) 	NOT NULL, 
 	first_name 			VARCHAR(30) NOT NULL, 
@@ -251,7 +252,7 @@ CREATE TABLE clique.alumnus_degrees (
 
 	-- cascade all
 	FOREIGN KEY (alumnus_id)
-		REFERENCES alumnus(id)
+		REFERENCES alumni(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 );
@@ -268,7 +269,7 @@ CREATE TABLE clique.alumnus_contact_nos (
 
 	-- cascade all
 	FOREIGN KEY (alumnus_id)
-		REFERENCES alumnus(id)
+		REFERENCES alumni(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 );
@@ -285,7 +286,7 @@ CREATE TABLE clique.alumnus_emails (
 
 	-- cascade all
 	FOREIGN KEY (alumnus_id)
-		REFERENCES alumnus(id)
+		REFERENCES alumni(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 );
@@ -302,7 +303,7 @@ CREATE TABLE clique.alumnus_fax_nos (
 
 	-- cascade all
 	FOREIGN KEY (alumnus_id)
-		REFERENCES alumnus(id)
+		REFERENCES alumni(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 );
@@ -322,7 +323,7 @@ CREATE TABLE clique.alumnus_work_info (
 
 	-- cascade all
 	FOREIGN KEY (alumnus_id)
-		REFERENCES alumnus(id)
+		REFERENCES alumni(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 

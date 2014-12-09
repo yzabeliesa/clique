@@ -1,0 +1,1 @@
+C:\xampp\htdocs\clique\app/views/statement_entries/index.blade.php

@@ -1,0 +1,1 @@
+C:\xampp\htdocs\clique\app/views/material_provisions/show.blade.php

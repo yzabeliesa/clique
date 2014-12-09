@@ -10,7 +10,8 @@
 	},
 	"require-dev": {
         "fzaninotto/Faker": "dev-master",
-    	"way/generators": "~2.0"
+    	"way/generators": "~2.0",
+    	"xethron/migrations-generator": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
