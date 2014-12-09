@@ -14,13 +14,15 @@
 
 		<div class="navbar navbar-inverse">
 		  <div class="navbar-header">
-		    <a class="navbar-brand" href="#">Clique</a>
+		    <a class="navbar-brand" href="/">Clique</a>
 		  </div>
 		  <div class="navbar-collapse collapse navbar-inverse-collapse">
 		    <ul class="nav navbar-nav navbar-right">
-		      <li><a href="{{ URL::to('login') }}">Log In</a></li>
-		      <li><a href="{{ URL::to('register') }}">Register</a></li>
-		      <!--
+		      <li><a href="{{ URL::to('users/login') }}">Log In</a></li>
+		      <li><a href="{{ URL::to('users/register') }}">Register</a></li>
+
+
+		      <!-- For future use
 		      <li class="dropdown">
 		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
 		        <ul class="dropdown-menu">
@@ -36,16 +38,15 @@
 		  </div>
 		</div>
 		      
-		      
- 
-	    <div class="container">
+		<div class="container">
+
 	        @if(Session::has('message'))
 	            <p class="alert">{{ Session::get('message') }}</p>
 	        @endif
+	 
+	        {{ $content }}
+	        
 	    </div>
-
-        {{ $content }}
-        
 	</div>
 </body>
 <footer>

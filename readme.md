@@ -111,7 +111,7 @@ If you will be working with front-end, I have added a couple more dependencies f
     - Update Bower by running this in the clique\ root using git shell: `bower update`.   
   - Install Grunt by running this in the clique\ root using git shell: `npm install -g grunt-cli`.
 - Run `grunt` once
-  - run it each time you wish to re-compile all assets
+  - then run it each time you wish to re-compile all assets (but before running, delete public/js folder every time before running to prevent endless nesting; I'm gonna fix the Gruntfile.js in the future)
   
 SASS / Compass are required for SASS compilation, while Grunt will be managing our SASS/CSS/JS assets.
 
