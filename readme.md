@@ -110,8 +110,6 @@ If you will be working with front-end, I have added a couple more dependencies f
   - Install Bower by running this in the clique\ root using git shell: `npm install -g bower`.
     - Update Bower by running this in the clique\ root using git shell: `bower update`.   
   - Install Grunt by running this in the clique\ root using git shell: `npm install -g grunt-cli`.
-- Run `grunt` once
-  - then run it each time you wish to re-compile all assets (but before running, delete public/js folder every time before running to prevent endless nesting; I'm gonna fix the Gruntfile.js in the future)
   
 SASS / Compass are required for SASS compilation, while Grunt will be managing our SASS/CSS/JS assets.
 
@@ -119,7 +117,7 @@ During frontend development, respective elements should be put in the following:
 - SASS: `clique\public\assets\stylesheets`
 - JS: `clique\public\assets\javascripts`
 
-When you wish to compile, just run `grunt` in the clique\ root using git shell. All respective static CSS and min.js should then be generated in:
+When you wish to compile, just run `grunt` in the clique\ root using git shell (but before running, delete public/js folder every time before running to prevent endless nesting; I'm gonna fix the Gruntfile.js in the future). All respective static CSS and min.js should then be generated in:
 - SASS: `clique\public\css`
 - JS: `clique\public\js`
 
@@ -127,11 +125,11 @@ If you wish to tinker with this setup, just change the `Gruntfile.js` in the roo
 
 For clarifications on this setup, you can look at the guide that I followed [here](http://gabriela.io/blog/2014/08/10/laravel-with-grunt-bower-foundation-and-sass/).
 
-`Jeric you asshole - you did it again, JS and SASS are just interpreted, why make us use Grunt`
+`Jeric you asshole - JS and SASS are just interpreted, we can set it up fine ourselves; why make us use Grunt`
 
 Grunt is a configurable automation tool, so I chose this out of scalability reasons. For example, executing one `grunt` command in this setup will:
 - put modernizr.js and all custom js in scripts_header.js
-- put all jquery.js, foundation.js and fastclick.js (vendor js; don't know exactly how we can use these but they are recommended) in scripts_footer.js
+- put all bootstrap.js, jquery.js, foundation.js and fastclick.js (vendor js; don't know exactly how we can use these but they are recommended) in scripts_footer.js
 - minify all CSS / JS and put them in the right public folder
 
 If you find it too much of a hassle, just tell me so I can remove all dependencies, or you may just move the assets manually (I'm not supposed to be front-end anyway haha).
