@@ -3,16 +3,17 @@ DROP DATABASE IF EXISTS clique;
 -- INTERNALS DATABASE
 CREATE DATABASE clique;
 
-CREATE TABLE clique.lookup_member_statuses (
+CREATE TABLE clique.lookup_user_statuses (
 	id 					INT 		NOT NULL AUTO_INCREMENT,
 	description 		VARCHAR(10) NOT NULL,
 
 	PRIMARY KEY(id)
 );
 
-CREATE TABLE clique.members (
+CREATE TABLE clique.users (
 	id 					INT 		NOT NULL AUTO_INCREMENT,
-	student_no			CHAR(10) 	not NULL,
+	student_no			CHAR(10) 	NOT NULL,
+	email_address		VARCHAR(50) NOT NULL,
 	first_name 			VARCHAR(30) NOT NULL,
 	middle_name 		VARCHAR(20) NOT NULL,
 	last_name 			VARCHAR(20) NOT NULL,
@@ -38,40 +39,23 @@ CREATE TABLE clique.members (
 
 	-- allow updates, restrict deletes
 	FOREIGN KEY (status_id) 
-		REFERENCES lookup_member_statuses(id)
+		REFERENCES lookup_user_statuses(id)
 		ON UPDATE CASCADE
 );
 
-CREATE TABLE clique.member_contact_nos (
+CREATE TABLE clique.user_contact_nos (
 	id 					INT 		NOT NULL AUTO_INCREMENT,
-	member_id 			INT 		NOT NULL, 
+	user_id 			INT 		NOT NULL, 
 	contact_no 			VARCHAR(24) NOT NULL, 
 	created_at			TIMESTAMP	NULL,
 	updated_at			TIMESTAMP	NULL,
 
 	PRIMARY KEY(id),
-	UNIQUE(member_id, contact_no),
+	UNIQUE(user_id, contact_no),
 
 	-- cascade all
-	FOREIGN KEY (member_id)
-		REFERENCES members(id)
-		ON DELETE CASCADE
-		ON UPDATE CASCADE
-);
-
-CREATE TABLE clique.member_emails (
-	id 					INT 		NOT NULL AUTO_INCREMENT,
-	member_id 			INT 	NOT NULL, 
-	email_address 		VARCHAR(30) NULL,
-	created_at			TIMESTAMP	NULL,
-	updated_at			TIMESTAMP	NULL,
-
-	PRIMARY KEY(id),
-	UNIQUE(member_id, email_address),
-
-	-- cascade all
-	FOREIGN KEY (member_id)
-		REFERENCES members(id)
+	FOREIGN KEY (user_id)
+		REFERENCES users(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
 );
@@ -91,19 +75,19 @@ CREATE TABLE clique.classes (
 	UNIQUE(class_code)
 );
 
-CREATE TABLE clique.member_schedules (
+CREATE TABLE clique.user_schedules (
 	id 					INT 		NOT NULL AUTO_INCREMENT,
-	member_id 			INT 		NOT NULL, 
+	user_id 			INT 		NOT NULL, 
 	class_code 			INT  		NOT NULL,
 	created_at			TIMESTAMP	NULL,
 	updated_at			TIMESTAMP	NULL,
 
 	PRIMARY KEY(id),
-	UNIQUE(member_id, class_code),
+	UNIQUE(user_id, class_code),
 
 	-- cascade all
-	FOREIGN KEY (member_id)
-		REFERENCES members(id)
+	FOREIGN KEY (user_id)
+		REFERENCES users(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 
@@ -112,7 +96,7 @@ CREATE TABLE clique.member_schedules (
 		REFERENCES classes(class_code)
 );
 
-CREATE TABLE clique.member_evals ( 
+CREATE TABLE clique.user_evals ( 
 	id 					INT 		NOT NULL AUTO_INCREMENT,
 	student_no_reviewee INT			NOT NULL,
 	eval_date 			DATE 		NOT NULL,
@@ -126,14 +110,14 @@ CREATE TABLE clique.member_evals (
 
 	-- cascade all for reviewee
 	FOREIGN KEY (student_no_reviewee)
-		REFERENCES members(id)
+		REFERENCES users(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 
 	-- when reviewer is updated, cascade
 	-- when reviewer is deleted, just set to null
 	FOREIGN KEY (student_no_reviewer)
-		REFERENCES members(id)
+		REFERENCES users(id)
 		ON DELETE SET NULL
 		ON UPDATE CASCADE
 );
@@ -386,7 +370,7 @@ CREATE TABLE clique.project_heads (
 
 	-- cascade all
 	FOREIGN KEY (student_id)
-		REFERENCES members(id)
+		REFERENCES users(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
  );
@@ -427,7 +411,7 @@ CREATE TABLE clique.meeting_attendances (
 
 	-- cascade all
 	FOREIGN KEY (student_id)
-		REFERENCES members(id)
+		REFERENCES users(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 
@@ -584,11 +568,10 @@ CREATE TABLE clique.financial_statements (
 CREATE TABLE clique.lookup_statement_types (
 	id 					INT 		NOT NULL AUTO_INCREMENT,
 	name				CHAR(30)	NOT NULL, 
-	type				TINYINT		NOT NULL, 	-- 	1 IF ASSET,
-												-- 	2 IF LIABILITY
+	class				CHAR(30)	NOT NULL, 	
 
 	PRIMARY KEY(id),
-	UNIQUE(name)
+	UNIQUE(name, class)
 );
 
 CREATE TABLE clique.statement_entries (
@@ -623,9 +606,22 @@ CREATE TABLE clique.statement_entries (
 		ON DELETE CASCADE
 		ON UPDATE CASCADE,
 
-	-- cascade all for members
+	-- cascade all for users
 	FOREIGN KEY (creator_id)
-		REFERENCES members(id)
+		REFERENCES users(id)
 		ON DELETE SET NULL
 		ON UPDATE CASCADE
 );
+
+INSERT INTO clique.lookup_user_statuses (description) VALUES ('active');
+INSERT INTO clique.lookup_user_statuses (description) VALUES ('inactive');
+
+INSERT INTO clique.lookup_amenity_types (name) VALUES ('Conference');
+INSERT INTO clique.lookup_amenity_types (name) VALUES ('Dining Event');
+INSERT INTO clique.lookup_amenity_types (name) VALUES ('Bar');
+
+INSERT INTO clique.lookup_statement_types (name, class) VALUES ('Cash','asset');
+INSERT INTO clique.lookup_statement_types (name, class) VALUES ('Inventory','asset');
+INSERT INTO clique.lookup_statement_types (name, class) VALUES ('Accounts Payable','liability');
+INSERT INTO clique.lookup_statement_types (name, class) VALUES ('Accrued Liabilites','liability');
+

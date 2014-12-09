@@ -79,3 +79,16 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Require The Validators File
+|--------------------------------------------------------------------------
+|
+| Next we will load the validators file for the application. This gives us
+| a nice separate location to store our validator
+| definitions instead of putting them all in the main validator file.
+|
+*/
+
+require app_path().'/validators.php';

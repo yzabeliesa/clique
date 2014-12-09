@@ -1,0 +1,9 @@
+//I modified the original bootstrap being imported here to use a Bootswatch Theme("Superhero"), you may start again from a fresh install should you wish
+
+@import '../vendor/bootstrap-sass-official/assets/stylesheets/bootstrap';
+ 
+.form-signup, .form-signin {
+    padding-top: 40px;
+    width: 600px;
+    margin: 0 auto;
+}

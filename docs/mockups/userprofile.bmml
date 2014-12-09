@@ -48,14 +48,14 @@
         <text>Mktg</text>
       </controlProperties>
     </control>
-    <control controlID="34" controlTypeID="com.balsamiq.mockups::Canvas" x="419" y="310" w="599" h="138" measuredW="100" measuredH="70" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::Canvas" x="419" y="316" w="599" h="132" measuredW="100" measuredH="70" zOrder="8" locked="false" isInGroup="-1"/>
     <control controlID="38" controlTypeID="com.balsamiq.mockups::Label" x="445" y="405" w="-1" h="-1" measuredW="127" measuredH="33" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
         <size>24</size>
         <text>User%20Name</text>
       </controlProperties>
     </control>
-    <control controlID="40" controlTypeID="com.balsamiq.mockups::Paragraph" x="605" y="323" w="256" h="110" measuredW="200" measuredH="80" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Paragraph" x="601" y="338" w="256" h="83" measuredW="200" measuredH="80" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
         <align>left</align>
         <size>20</size>
@@ -84,7 +84,7 @@
         <icon>PencilIcon%7Cmedium</icon>
       </controlProperties>
     </control>
-    <control controlID="51" controlTypeID="com.balsamiq.mockups::RoundButton" x="466" y="321" w="86" h="82" measuredW="32" measuredH="32" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::RoundButton" x="472" y="338" w="72" h="68" measuredW="32" measuredH="32" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <text/>
       </controlProperties>
