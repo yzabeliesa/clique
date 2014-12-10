@@ -17,5 +17,4 @@
 	</a>
 	<h1>Welcome to Clique.</h1>
 	</br>
-</div>
 @stop

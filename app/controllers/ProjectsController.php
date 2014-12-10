@@ -7,11 +7,12 @@ class ProjectsController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function getIndex()
 	{
 		$projects = Project::all();
 
-		return View::make('projects.index', compact('projects'));
+		return View::make('projects.index')
+			->with('projects', $projects);
 	}
 
 	/**

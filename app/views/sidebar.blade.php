@@ -1,10 +1,10 @@
 <div align='center'>
-	{{ Form::button('Projects', array('class'=>'btn btn-large btn-danger btn-block'))}}
-	{{ Form::button('Logistics', array('class'=>'btn btn-large btn-primary btn-block'))}}
-	{{ Form::button('Finance', array('class'=>'btn btn-large btn-warning btn-block'))}}
-	{{ Form::button('Marketing', array('class'=>'btn btn-large btn-success btn-block'))}}
-	{{ Form::button('Externals', array('class'=>'btn btn-large btn-info btn-block'))}}
-	{{ Form::button('Internals', array('class'=>'btn btn-large btn-default btn-block'))}}
+	{{ link_to('projects/index', 'Projects', ['class' => 'btn btn-large btn-danger btn-block']) }}
+	{{ link_to('', 'Logistics', ['class' => 'btn btn-large btn-primary btn-block']) }}
+	{{ link_to('', 'Finance', ['class' => 'btn btn-large btn-warning btn-block']) }}
+	{{ link_to('', 'Marketing', ['class' => 'btn btn-large btn-success btn-block']) }}
+	{{ link_to('', 'Externals', ['class' => 'btn btn-large btn-info btn-block']) }}
+	{{ link_to('', 'Internals', ['class' => 'btn btn-large btn-default btn-block']) }}
 	fuck yeah rainbows
 
 	<br/><br/>

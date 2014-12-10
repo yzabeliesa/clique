@@ -26,7 +26,7 @@
     {{ Form::text('degree', null, array('class'=>'form-control','placeholder'=>'Degree')); }}
 
     {{ Form::select('status_id', array('1' => 'Active', '2' => 'Inactive'), '1', array('class' => 'form-control')) }}
-    
+
     {{ Form::submit('Register', array('class'=>'btn btn-large btn-primary btn-block'))}}
 {{ Form::close() }}
 @stop

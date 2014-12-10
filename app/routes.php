@@ -14,3 +14,5 @@
 Route::get('/', 'HomeController@showWelcome');
 
 Route::controller('users', 'UsersController');
+Route::controller('projects', 'ProjectsController');
+

@@ -30,7 +30,10 @@ CREATE TABLE clique.users (
 	college 			VARCHAR(20) NOT NULL, 
 	degree 				VARCHAR(30) NOT NULL, 
 	status_id 			INT 		NOT NULL, 
-	password 			CHAR(64) 	NOT NULL, -- SHA-256 
+	password 			CHAR(64) 	NOT NULL, -- SHA-256
+	privilege			INT			NOT NULL,	-- 1 for normal
+												-- 2 for executive
+												-- 3 for admin
 	created_at			TIMESTAMP	NULL,
 	updated_at			TIMESTAMP	NULL,
 	remember_token		VARCHAR(100) NULL,
@@ -616,6 +619,9 @@ CREATE TABLE clique.statement_entries (
 
 INSERT INTO clique.lookup_user_statuses (description) VALUES ('active');
 INSERT INTO clique.lookup_user_statuses (description) VALUES ('inactive');
+
+INSERT INTO clique.projects (name) VALUES ('GEECS');
+INSERT INTO clique.projects (name) VALUES ('Engg Week');
 
 INSERT INTO clique.lookup_amenity_types (name) VALUES ('Conference');
 INSERT INTO clique.lookup_amenity_types (name) VALUES ('Dining Event');

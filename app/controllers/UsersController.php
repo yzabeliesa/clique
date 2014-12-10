@@ -25,11 +25,15 @@ class UsersController extends BaseController {
 		    $user->email_address = Input::get('email_address');
 		    $user->password = Hash::make(Input::get('password'));
 		    $user->current_committee = Input::get('current_committee');
+
 		    $user->birth_date = Input::get('birth_date');
+
 		    $user->sem_accepted = Input::get('sem_accepted');
 		    $user->college = Input::get('college');
 		    $user->degree = Input::get('degree');
 		    $user->status_id = Input::get('status_id');
+
+		    $user->privilege = '1';
 
 		    $user->save();
  
