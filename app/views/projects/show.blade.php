@@ -1,1 +1,5 @@
-C:\xampp\htdocs\clique\app/views/projects/show.blade.php
+@extends('main')
+
+@section('content')
+<h1>{{ $project->name }}</h1>
+@stop

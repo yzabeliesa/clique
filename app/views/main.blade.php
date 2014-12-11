@@ -24,6 +24,7 @@
                     <li>{{ HTML::link('users/register', 'Register') }}</li>   
                     <li>{{ HTML::link('users/login', 'Login') }}</li>   
                 @else
+					<li>{{ HTML::link('users/{Auth::user()->id}', Auth::user()->first_name)}}</li>
                     <li>{{ HTML::link('users/logout', 'Logout') }}</li>
                 @endif
 
@@ -56,7 +57,7 @@
 			@if(!Auth::check())
 	       	 	@yield('content')
             @else
-				<div id="sidebar" class="col-md-2">
+				<div id="sidebar" class="col-md-2" align="center">
 					@include('sidebar')
 				</div>
 

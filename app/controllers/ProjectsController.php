@@ -50,11 +50,12 @@ class ProjectsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function getShow($id)
 	{
 		$project = Project::findOrFail($id);
 
-		return View::make('projects.show', compact('project'));
+		return View::make('projects.show')
+			->with('project', $project);
 	}
 
 	/**

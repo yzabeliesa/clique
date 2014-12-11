@@ -620,8 +620,8 @@ CREATE TABLE clique.statement_entries (
 INSERT INTO clique.lookup_user_statuses (description) VALUES ('active');
 INSERT INTO clique.lookup_user_statuses (description) VALUES ('inactive');
 
-INSERT INTO clique.projects (name) VALUES ('GEECS');
-INSERT INTO clique.projects (name) VALUES ('Engg Week');
+INSERT INTO clique.projects VALUES (1, 'GEECS', 'CURSOR event', now(), '2014-07-01', '08:00','2014-07-01', '17:00', now(), now());
+INSERT INTO clique.projects VALUES (2, 'Engg Week', 'Engg-wide event', now(), '2014-07-01', '08:00', '2014-07-01', '17:00', now(), now());
 
 INSERT INTO clique.lookup_amenity_types (name) VALUES ('Conference');
 INSERT INTO clique.lookup_amenity_types (name) VALUES ('Dining Event');
